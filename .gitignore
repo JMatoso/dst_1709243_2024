@@ -7,6 +7,7 @@ __pycache__/
 splitted/
 text/
 final/
+model_predictor
 
 # C extensions
 *.so

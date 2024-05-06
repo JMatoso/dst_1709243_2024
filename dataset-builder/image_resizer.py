@@ -18,7 +18,7 @@ def resize():
             (".png", ".jpg", ".jpeg")
         ):
             image = Image.open(input_path)
-            resized_image = image.resize((28, 28))
+            resized_image = image.resize((35, 35))
             output_path = os.path.join(output_dir, filename)
             resized_image.save(output_path)
 

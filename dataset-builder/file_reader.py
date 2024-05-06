@@ -6,7 +6,7 @@ from picture_to_numbers_converter import convert_image_to_csv
 def read_files():
     resize()
 
-    path = os.path.abspath("./dataset-builder/output/final/")
+    path = os.path.abspath("./dataset-builder/output/splitted/")
     if not os.path.exists(path):
         os.makedirs(path)
     dir_list = os.listdir(path)

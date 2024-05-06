@@ -1,4 +1,4 @@
-# dst_1709243_2024
+# Modelo de IA para Reconhecer Escritas à Mão Personalizadas
 Repositório para as aulas de Tópicos para Ciência de Dados.
 
 <p>Joaquim Matoso José</p>

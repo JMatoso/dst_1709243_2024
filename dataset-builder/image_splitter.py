@@ -13,7 +13,7 @@ def split(fileNameWithImageFormat, rows, cols):
         print("File not found")
         return
 
-    output = os.path.abspath("./dataset-builder/output/splitted/")
+    output = os.path.abspath("./dataset-builder/output/final/")
     if not os.path.exists(output):
         os.makedirs(output)
 

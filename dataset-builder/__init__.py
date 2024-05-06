@@ -17,6 +17,6 @@ def load_ai(file_name):
 
 
 if __name__ == "__main__":
-    split("tabela6_approved.png", 10, 10)
+    split("mnist.jpg", 10, 10)
     read_files()
     load_ai(build())

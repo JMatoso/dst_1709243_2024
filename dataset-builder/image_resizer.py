@@ -5,7 +5,7 @@ from PIL import Image
 def resize():
     print("\nResizing images...")
 
-    input_dir = os.path.abspath("./dataset-builder/output/splitted/")
+    input_dir = os.path.abspath("./dataset-builder/output/final/")
     output_dir = os.path.abspath("./dataset-builder/output/final/")
 
     if not os.path.exists(output_dir):

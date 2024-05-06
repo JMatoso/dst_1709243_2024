@@ -1,4 +1,5 @@
 import os
+import subprocess
 from image_splitter import split
 from dataset_builder import build
 from file_reader import read_files
@@ -12,7 +13,7 @@ def load_ai(file_name):
         print("File not found:", ai_path)
         return
 
-    os.system(f"python {ai_path} {file_name}")
+    subprocess.run(["python", ai_path, file_name])
 
 
 if __name__ == "__main__":

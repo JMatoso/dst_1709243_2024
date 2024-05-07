@@ -173,7 +173,7 @@ Esse procedimento não apenas nos permitiu criar um modelo robusto, mas também 
 possibilitará realizar melhorias contínuas à medida que refinarmos e ajustarmos o nosso
 conjunto de dados e algoritmos de aprendizado de máquina.
 
-## Bibliográfia
+## Bibliografia
 
 ```
 [1] Paulo Vieira, Leitura- 4 - C-Building_a_MNIST_dataset_rev-2.pdf

@@ -30,10 +30,6 @@ Uma vez que o conjunto de dados esteja pronto, um modelo de aprendizado de máqu
 
 Para compor o conjunto de dados do MNIST, uma matriz de 10x10 foi criada em uma folha de papel, na qual os números de 0 a 9 foram escritos à mão em suas respetivas células. Posteriormente, uma fotografia da folha foi tirada e adicionada ao projeto, servindo como parte do conjunto de dados MNIST personalizado.
 
-![MNIST](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/mnist.jpg?raw=true)
-
-<pre>O primeiro passo será a divisão da imagem, o segundo será o redimensionamento das imagens para 35x35 em blocos separando os números.</pre>
-
 ``` bash
 dataset-builder
 │
@@ -53,7 +49,17 @@ dataset-builder
 └── picture_to_numbers_converter.py 
 ```
 
-<pre>O terceiro passo envolverá a conversão das imagens divididas em formato .csv, preparando-as para a construção do nosso conjunto de dados.</pre>
+> O script foi alterado para executar todos os passos necessários para construir o dataset e treinar a IA, eliminando a necessidade de intervenção manual.
+
+<pre>O primeiro passo é adicionar a imagem do conjunto de dados MNIST na pasta images.</pre>
+
+![MNIST](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/mnist.jpg?raw=true)
+
+<pre>O segundo será a divisão da imagem e o redimensionamento das imagens para 35x35 em blocos separando os números.</pre>
+
+![SplittedImages](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/splitted-images.png?raw=true)
+
+<pre>A seguir, alterar o método split, passando o nome da imagem e o formato. O método <code>load_ai()</code> será chamado no final da construção.</pre>
 
 ``` py
 if __name__ == "__main__":
@@ -61,17 +67,16 @@ if __name__ == "__main__":
     read_files()
     load_ai(build())
 ```
-O script foi alterado para executar todos os passos necessários para construir o dataset, eliminando a necessidade de intervenção manual.
 
-![SplittedImages](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/splitted-images.png?raw=true)
-
-A conversão das imagens divididas para o formato .csv foi realizada para facilitar o processamento e a manipulação dos dados durante a construção do conjunto de dados. O formato .csv é amplamente utilizado para armazenar dados tabulares, o que o torna conveniente para representar imagens pixel a pixel. Isso permite que as informações das imagens sejam organizadas em linhas e colunas, tornando mais fácil o acesso aos dados durante a fase de pré-processamento e treinamento dos modelos de inteligência artificial.
-
-<pre>O primeiro passo é adicionar a imagem do conjunto de dados MNIST na pasta images.</pre>
+<pre>O terceiro passo envolverá a conversão das imagens divididas em formato .csv, preparando-as para a construção do nosso conjunto de dados.</pre>
 
 ![ConvertedImages](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/converted-images-csv.png?raw=true)
 
-<pre>A seguir, alterar o método split, passando o nome da imagem e o formato. O método <code>load_ai()</code> será chamado no final da construção.</pre>
+A conversão das imagens divididas para o formato .csv foi realizada para facilitar o processamento e a manipulação dos dados durante a construção do conjunto de dados. O formato .csv é amplamente utilizado para armazenar dados tabulares, o que o torna conveniente para representar imagens pixel a pixel. Isso permite que as informações das imagens sejam organizadas em linhas e colunas, tornando mais fácil o acesso aos dados durante a fase de pré-processamento e treinamento dos modelos de inteligência artificial.
+
+<pre>E por fim o nosso dataset é criado.</pre>
+
+![FinalDataset](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/final-dataset.png?raw=true)
 
 ``` bash
 dataset-builder
@@ -81,13 +86,9 @@ dataset-builder
 │       └── final_<ticks>_<filename>.<file.format>
 ```
 
-<pre>E por fim o nosso dataset é criado.</pre>
-
-![FinalDataset](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/final-dataset.png?raw=true)
-
 ### 3.2. Treinamento do Modelo
 
-Quando o <code>__init__.py</code> no <code>simple-ai</code> é chamado, ele executa todos os passos necessários para treinar o nosso modelo, excluindo a necessidade de intervenção manual.
+> Quando o <code>__init__.py</code> no <code>simple-ai</code> é chamado, ele executa todos os passos necessários para treinar o nosso modelo, excluindo a necessidade de intervenção manual.
 
 ``` bash
 simple-ai

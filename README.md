@@ -30,9 +30,9 @@ Uma vez que o conjunto de dados esteja pronto, um modelo de aprendizado de máqu
 
 Para compor o conjunto de dados do MNIST, uma matriz de 10x10 foi criada em uma folha de papel, na qual os números de 0 a 9 foram escritos à mão em suas respetivas células. Posteriormente, uma fotografia da folha foi tirada e adicionada ao projeto, servindo como parte do conjunto de dados MNIST personalizado.
 
-![MNIST](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/mnist.jpg?raw=true){width=100px}
+![MNIST](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/mnist.jpg?raw=true)
 
-O primeiro passo será a divisão da imagem, o segundo será o redimensionamento das imagens para 35x35 em blocos separando os números.
+<pre>O primeiro passo será a divisão da imagem, o segundo será o redimensionamento das imagens para 35x35 em blocos separando os números.</pre>
 
 ``` bash
 dataset-builder
@@ -53,7 +53,7 @@ dataset-builder
 └── picture_to_numbers_converter.py 
 ```
 
-O terceiro passo envolverá a conversão das imagens divididas em formato .csv, preparando-as para a construção do nosso conjunto de dados.
+<pre>O terceiro passo envolverá a conversão das imagens divididas em formato .csv, preparando-as para a construção do nosso conjunto de dados.</pre>
 
 ``` py
 if __name__ == "__main__":
@@ -67,15 +67,11 @@ O script foi alterado para executar todos os passos necessários para construir 
 
 A conversão das imagens divididas para o formato .csv foi realizada para facilitar o processamento e a manipulação dos dados durante a construção do conjunto de dados. O formato .csv é amplamente utilizado para armazenar dados tabulares, o que o torna conveniente para representar imagens pixel a pixel. Isso permite que as informações das imagens sejam organizadas em linhas e colunas, tornando mais fácil o acesso aos dados durante a fase de pré-processamento e treinamento dos modelos de inteligência artificial.
 
-```
-O primeiro passo é adicionar a imagem do conjunto de dados MNIST na pasta images.
-```
+<pre>O primeiro passo é adicionar a imagem do conjunto de dados MNIST na pasta images.</pre>
 
 ![ConvertedImages](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/converted-images-csv.png?raw=true)
 
-```
-A seguir, alterar o método split, passando o nome da imagem e o formato. O método load_ai() será chamado no final da construção
-```
+<pre>A seguir, alterar o método split, passando o nome da imagem e o formato. O método <code>load_ai()</code> será chamado no final da construção.</pre>
 
 ``` bash
 dataset-builder
@@ -85,15 +81,13 @@ dataset-builder
 │       └── final_<ticks>_<filename>.<file.format>
 ```
 
-```
-E por fim o nosso dataset é criado.
-```
+<pre>E por fim o nosso dataset é criado.</pre>
 
 ![FinalDataset](https://github.com/JMatoso/dst_1709243_2024/blob/main/project-images/final-dataset.png?raw=true)
 
 ### 3.2. Treinamento do Modelo
 
-Quando o __init__.py no simple-ai é chamado, ele executa todos os passos necessários para treinar o nosso modelo, excluindo a necessidade de intervenção manual.
+Quando o <code>__init__.py</code> no <code>simple-ai</code> é chamado, ele executa todos os passos necessários para treinar o nosso modelo, excluindo a necessidade de intervenção manual.
 
 ``` bash
 simple-ai
@@ -137,25 +131,17 @@ def load_ai(file_name):
     subprocess.run(["python", ai_path, file_name])
 ```
 
-```
-load_ai(), é responsável por executar o treinamento do nosso modelo, é chamado tão logo termine a construção do dataset.
-```
+<pre><code>load_ai()</code>, é responsável por executar o treinamento do nosso modelo, é chamado tão logo termine a construção do dataset.</pre>
 
 <code>prepared_dataset</code>
 
-```
-Gerado durante a preparação do dataset.
-```
+<pre>Gerado durante a preparação do dataset.</pre>
 
 <code>prepared_dataset_test</code> e <code>prepared_dataset_train</code>
 
-```
-Gerados durante a separação do dataset.
-```
+<pre>Gerados durante a separação do dataset.</pre>
 
-```
-Model Predictor gerado durante o treinamento do modelo.
-```
+<pre>Model Predictor gerado durante o treinamento do modelo.</pre>
 
 O <code>model_predictor</code> é um objeto que pode ser usado para fazer previsões em novos
 dados após o treinamento ter sido concluído.
